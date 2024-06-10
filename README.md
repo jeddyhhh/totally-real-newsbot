@@ -13,6 +13,14 @@ Requires:<br>
 - A New York Times API access key<br>(https://developer.nytimes.com/get-started)<br>
 - (optional) A Facebook page access token<br><br>
 
+Usage:<br>
+1. Clone this repository<br>
+2. Run `pip install -r requirements.txt`<br>
+3. In run_bot.py, under "API Details", double check that your text-generation-webui, stable-diffusion-webui and alltalk_tts API paths are correct as well as your NYT API key is set<br>
+4. In run_bot.py, confirm bot settings under "Config", use True and False to set options.
+5. Make sure both text-generation-webui (with alltalk_tts) and stable-diffusion-webui are running with api enabled<br>
+6. Run `python run_bot.py` in console<br><br>
+
 Basic process overview:<br>
 1. Bot grabs a NYT headline and short description<br>
 2. Bot uses text-generation-webui to analyse the headline for tone and stores it.<br>
