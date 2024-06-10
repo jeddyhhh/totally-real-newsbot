@@ -1,4 +1,4 @@
-# totally-real-newsbot
+# totally-real-news-bot
 Generates AI text/images/video based on a NYT news headline, can be modified to create other content.
 
 Writing documentation now.
