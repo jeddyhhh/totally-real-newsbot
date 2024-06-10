@@ -1,13 +1,11 @@
 ## totally real newsbot - by jeddyh ##
 import json
 import base64
-import schedule
 import requests
 import time
 import os
 import random
 import re
-import shutil
 from mutagen.wave import WAVE
 from PIL import Image
 from pathlib import Path
@@ -46,7 +44,7 @@ tts_headers = {'Content-Type': 'application/x-www-form-urlencoded'}
 
 ## Social API Details ##
 your_facebook_page_id = 0 ##If using Facebook, put your page id here
-your_facebook_page_access_token = '' #Insert Facebook page access token here
+your_facebook_page_access_token = '' ##Insert Facebook page access token here
 
 ## Script variables/arrays ##
 starttime = time.time()
