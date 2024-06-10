@@ -152,7 +152,7 @@ def generate_text(headline, article_desc):
         'temperature': 1.1,
         'top_p': 0.1,
         'typical_p': 1,
-        'repetition_penalty': 0.9,
+        'repetition_penalty': 1.18,
         'top_k': 65,
         'min_length': 150,
         'num_beams': 1,
