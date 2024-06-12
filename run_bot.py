@@ -1,11 +1,13 @@
-## totally real news bot - by jeddyh ##
+## totally real newsbot - by jeddyh ##
 import json
 import base64
+import schedule
 import requests
 import time
 import os
 import random
 import re
+import shutil
 from mutagen.wave import WAVE
 from PIL import Image
 from pathlib import Path
@@ -15,12 +17,14 @@ from random import randrange
 import time
 
 ## Config ##
-facebook_post_enable = False 
-combineVideos = False
+facebook_post_enable = True 
+combineVideos = True
 num_of_vids_to_combine = 3
-random_topic_mode = True
-random_article_select = True
+random_topic_mode = False
+random_article_select = False
 random_voice_mode = False
+cata_number = 0
+select_article = 1
 
 ## Image and Video Config ##
 image_height = "400"
@@ -32,7 +36,7 @@ video_width = "400"
 watermark_mode = True
 
 ## API Details ##
-nyt_apikey = "" ##insert nyt api key here
+nyt_apikey = ""
 
 ooba_url = "http://127.0.0.1:5000/v1/completions"
 ooba_headers = {"Content-Type": "application/json"}
@@ -43,8 +47,8 @@ tts_url = "http://127.0.0.1:7851/api/tts-generate-streaming"
 tts_headers = {'Content-Type': 'application/x-www-form-urlencoded'}
 
 ## Social API Details ##
-your_facebook_page_id = 0 ##If using Facebook, put your page id here
-your_facebook_page_access_token = '' ##Insert Facebook page access token here
+your_facebook_page_id = 0
+your_facebook_page_access_token = ''
 
 ## Script variables/arrays ##
 starttime = time.time()
@@ -275,14 +279,15 @@ while True:
     if random_article_select == True:
         select_article = randrange(get_article_count(cata_number))
     
+    if random_article_select == False and random_topic_mode == False:
+        if cata_number > 21:
+            article_count = get_article_count(cata_number)
+            cata_number = 1
+            if select_article > article_count:
+                select_article = 1
+
     nyt_headline, nyt_article_desc, headline_topic = fetch_nyt_headline(cata_number, select_article)
 
-    if random_article_select == False and random_topic_mode == False:
-        cata_number = cata_number + 1
-        if cata_number > 21:
-            cata_number = 1
-            select_article = select_article + 1
-    
     cata_name = get_category_name(cata_number)
 
     print(f'\n{bcolors.HEADER}Generating text for: {nyt_headline}. Category: {cata_name}{bcolors.ENDC}')
@@ -366,6 +371,10 @@ while True:
     saveGenStats(f'\n\n{nyt_headline}\n{genInfo}')
     gen_info_array.clear()
 
+    if random_article_select == False and random_topic_mode == False:
+        cata_number = cata_number + 1
+        select_article = select_article + 1
+    
     print(f'\n{bcolors.OKGREEN}Video creation complete for {bcolors.ENDC}{bcolors.OKCYAN}{nyt_headline}{bcolors.ENDC}')
     print(f'{bcolors.OKGREEN}Time taken overall: {bcolors.ENDC}{bcolors.WARNING}{runtime} minutes.')
     print(f'\n{bcolors.OKGREEN}Total number of videos generated so far: {total_num_of_vids_gen}{bcolors.ENDC}')
