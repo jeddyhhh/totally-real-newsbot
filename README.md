@@ -24,9 +24,9 @@ Usage:<br>
 Basic process overview:<br>
 1. Bot grabs a NYT headline and short description<br>
 2. Bot uses text-generation-webui to analyse the headline for tone and stores it.<br>
-3. Bot generates a news article text based on the headline and short description, asks bot to write in the stored tone.<br>
+3. Bot generates a news article text based on the headline and short description, asks bot to write in a randomly selected tone from emotions.txt and from a random perpective from descriptive.txt<br>
 4. Bot uses Alltalk_tts to generate speech based on the generated article text, outputs a .wav file
-5. Bot starts generating 4 images based on the headline, it will start generating using what ever model is loaded into stable-diffusion-webui, outputs .png files<br>
+5. Bot starts generating 4 images based on the headline and the tone stored from step 2, it will start generating using what ever model is loaded into stable-diffusion-webui, outputs .png files<br>
 - If enabled, bot will overlay a watermark to the images, logo_overlay.png in the root is the watermark file, it can be changed to whatever you want.<br>
 6. Bot combines the images and speech into a .mp4 file<br>
 - If enabled, bot will combine videos together to form a longer video with multiple articles in it, transClip.mp4 in the root is the video that goes in between your generated videos, you can change this to whatever you want<br>
