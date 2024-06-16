@@ -9,7 +9,7 @@ Here's some examples of output: https://www.facebook.com/profile.php?id=61560732
 Requires:<br>
 - Python 3<br>
 - A working install of text-generation-webui with the --api flag enabled<br>(https://github.com/oobabooga/text-generation-webui)<br>
-- A working Alltalk_tts v2 BETA installation with api access enabled.<br>(https://github.com/erew123/alltalk_tts/tree/alltalkbeta)<br>
+- A working Alltalk_tts v2 BETA installation with api access enabled.<br>(Either the standalone or TWGUI extension will work)<br>(https://github.com/erew123/alltalk_tts/tree/alltalkbeta)<br>
 - A working install of stable-diffusion-webui with  --api enabled in COMMANDLINE_ARGS<br>(https://github.com/AUTOMATIC1111/stable-diffusion-webui)<br>
 - A New York Times API access key<br>(https://developer.nytimes.com/get-started)<br>
 - (optional) A Facebook page access token<br><br>
