@@ -20,6 +20,8 @@ Usage:<br>
 3. In run_bot.py, under "API Details", double check that your text-generation-webui, stable-diffusion-webui and alltalk_tts API paths are correct as well as your NYT API key is set<br>
 4. In run_bot.py, confirm bot settings under "Config", use True and False to set options.
 5. Make sure both text-generation-webui (with alltalk_tts) and stable-diffusion-webui are running with api enabled<br>
+6. If using random RVC selection mode, edit "rvc_voices.txt" in the root to include your RVC model paths, the ones in there at the moment are examples of how it should be formatted.<br>
+RVC models go in alltalk_tts/models/rvc_voices/*folder*/*model*.pth<br>
 6. Run `python run_bot.py` in console<br><br>
 
 Basic process overview:<br>
