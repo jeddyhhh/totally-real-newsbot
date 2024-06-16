@@ -1,4 +1,4 @@
-## totally real newsbot - by jeddyh - v0.2##
+## totally real newsbot - by jeddyh - v1.1##
 import json
 import base64
 import requests
