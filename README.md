@@ -35,3 +35,8 @@ Basic process overview:<br>
 - If enabled, bot will post the .mp4 to a Facebook page.<br>
 - If enabled, bot will add the generated hashtags to the end of the video description on Facebook.<br>
 8. Bot will continue to generate until the python script is stopped.<br>
+
+Models I'm using:<br>
+LLM - Awanllm-Llama-3-8B-Dolfin-v0.6-Abliterated-DPO.Q5_K_M.gguf<br>
+Stable Diffusion - 512-base-ema.ckpt<br> 
+TTS - Piper with various RVC models.<br>
